@@ -37,18 +37,7 @@ h1 {
   font-size: 22px
 }
 
-h2, .wiki h1 {
-  font-size: 18px;
-  color: #222;
-}
-
-h3, .wiki h2 {
-  font-size: 14px;
-  color: #222;
-}
-
-h4, .wiki h3 {
-  font-size: 13px;
+#content h1, h2, h3, h4 {
   color: #222;
 }
 
@@ -139,11 +128,6 @@ h4, .wiki h3 {
   padding-left: 24px;
   background-image: url(../images/project_settings.png);
 }
-
-.pagination {
-  font-size: 100%;
-}
-
 
 /***** Links *****/
 
@@ -350,6 +334,7 @@ input[type="text"] {
 }
 
 textarea.wiki-edit {
+  font-size: 14px;
   font-family: "Osaka-Mono", "MS Gothic", sans-serif;
   letter-spacing: normal;
   line-height: 130%;
@@ -452,12 +437,12 @@ div.wiki pre {
   word-wrap: break-word; /* IE 5.5+ */
 }
 
-div.wiki img {
-  max-width: 98%
-}
-
 div.wiki p {
   line-height: 165%;
+}
+
+div.wiki li {
+  margin-bottom: 4px;
 }
 
 /***** My page layout *****/
@@ -632,28 +617,45 @@ html>body .tabular p {overflow:visible;}
 
 /***** pagination *****/
 p.pagination {
-  font-size: 100%;
+  font-size: 12px;
+}
+
+p.pagination a:hover {
+  background: #ffffdd;
 }
 
 p.pagination .current {
   font-weight: bold;
+  background: #d9e4ff;
 }
 
 p.pagination .page {
-  margin-right: 0.1em;
+  margin-right: 1px;
+  padding: 1px 4px;
+  border: 1px solid #bbb;
 }
 
 p.pagination .previous {
-  margin-right: 0.3em;
+  margin-right: 1px;
+  padding: 1px 4px;
+  border: 1px solid #bbb;
+  border-radius: 10px 0 0 10px;
 }
 
 p.pagination .next {
-  margin-left: 0.3em;
+  margin-left: 1px;
+  padding: 1px 4px;
+  border: 1px solid #bbb;
+  border-radius: 0 10px 10px 0;
 }
 
 p.pagination .items {
   margin-left: 0.3em;
   margin-right: 0.6em;
+}
+
+span.per-page span {
+  font-weight: bold;
 }
 
 /* サイドバーの幅を狭く */
@@ -682,6 +684,65 @@ a[href*="activity"][title*=":"]:after {
   font-size: 12px;
 }
 
-ul.details {
+div.projects.box > ul > li > a {
+  font-weight: bold;
+}
+
+/* history */
+#history {
+  padding: 0 1em;
+  margin-bottom: 1em;
+  border-right: 1px solid #d7d7d7;
+  border-bottom: 1px solid #d7d7d7;
+  border-left: 1px solid #d7d7d7;
+  border-radius: 0 0 3px 3px / 0 0 3px 3px;
+}
+
+/* journal */
+div.journal {
+  margin-bottom: 0.5em;
+}
+
+div.journal ul.details {
   font-size: 12px;
+  color: #444;
+  background: #f6f6f6;
+  border-radius: 3px;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  margin-top: 10px;
+}
+
+div.journal ul.details i:before {
+  content: '[';
+  font-style: normal;
+}
+
+div.journal ul.details i:after {
+  content: ']';
+  font-style: normal;
+}
+
+div.journal div.wiki {
+  margin: 0 0 0 30px;
+}
+
+div.journal h4:first-child {
+  font-size: 12px;
+  font-weight: normal;
+  color: #444;
+}
+
+/* news */
+body.controller-news.action-index h3 {
+  margin-bottom: 4px;
+}
+
+body.controller-news.action-index .author {
+  margin-top: 0;
+  border-bottom: 1px dotted #BBBBBB;
+}
+
+body.controller-news.action-index .wiki {
+  margin: 12px 0 20px 30px;
 }
