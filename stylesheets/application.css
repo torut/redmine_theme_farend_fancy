@@ -134,10 +134,6 @@ h1, h2, h3, h4 {
 
 /***** Links *****/
 
-a, a:link, a:visited {
-  color: #0c4d7f
-}
-
 a.issue.closed, a.issue.closed:link, a.issue.closed:visited {
   color: #666
 }
@@ -178,6 +174,10 @@ tr.changeset td.committed_on {
 
 tr.version.closed, tr.version.closed a {
   color: #666
+}
+
+table.list.issues tr.closed td {
+  opacity: 0.7;
 }
 
 tr.assigned-to-me td.assigned_to, tr.created-by-me td.author {
@@ -306,11 +306,6 @@ tr.priority-lowest a {
   color: #559
 }
 
-/* チケット一覧で終了したチケットは取り消し線付きで表示 */
-tr.closed td.id, tr.closed td.subject {
-  text-decoration: line-through;
-}
-
 #watchers a.delete {
   opacity: 0.7
 }
@@ -318,10 +313,19 @@ tr.closed td.id, tr.closed td.subject {
 .box {
   color: #222;
   border-radius: 3px;
+  word-wrap: break-word;
 }
 
 .contextual {
   font-size: 12px
+}
+
+.issue .contextual {
+  margin: 0;
+  padding: 2px 3px;
+  border-radius: 3px;
+  background: #fffff2;
+  border: 1px solid #e6e6cf;
 }
 
 /* submitボタンを押しやすく */
@@ -612,9 +616,6 @@ div.message {
 #content .wiki-page + .attachments {
   border-top: 1px dashed #ccc;
 }
-
-/* http://www.redmine.org/issues/11825 */
-html>body .tabular p {overflow:visible;}
 
 /***** pagination *****/
 p.pagination {
